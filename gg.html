@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Texte qui se déplace</title>
+  <style>
+    #texte {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="moveText()">Déplacer le texte</button>
+  <div id="texte">Bonjour, c'est Bing!</div>
+  <script>
+    function moveText() {
+      var texte = document.getElementById("texte");
+      var x = Math.floor(Math.random() * window.innerWidth);
+      var y = Math.floor(Math.random() * window.innerHeight);
+      
+      texte.style.left = x + "px";
+      texte.style.top = y + "px";
+    }
+    setInterval(moveText,1000)
+  </script>
+</body>
+</html>
